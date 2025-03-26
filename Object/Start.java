@@ -170,7 +170,8 @@ public class Start {
                                                     subject.subjectMain();
                                                     break;
                                                 case "4":
-                                                    Document.documentMain();
+                                                    Document document = new Document();
+                                                    document.documentMain();
                                                     break;
                                                 case "5":
                                                     Course course = new Course();
