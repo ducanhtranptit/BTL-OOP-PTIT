@@ -23,39 +23,48 @@ public class Document implements DocumentInterface {
         this.subject_id = subject_id;
     }
 
+    
     public String getDocument_id() {
         return document_id;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public String getLink() {
         return link;
     }
 
+    @Override
     public String getSubject_id() {
         return subject_id;
     }
 
+    @Override
     public void setDocument_id(String document_id) {
         this.document_id = document_id;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public void setLink(String link) {
         this.link = link;
     }
 
+    @Override
     public void setSubject_id(String subject_id) {
         this.subject_id = subject_id;
     }
 
-    public static Document typeDocument() {
+    @Override
+    public Document typeDocument() {
         Document dc = new Document();
         System.out.print("Nhap ma tai lieu : ");
         dc.setDocument_id(scanner.nextLine());
@@ -68,14 +77,16 @@ public class Document implements DocumentInterface {
         return dc;
     }
 
-    public static boolean check(Document dc) {
+    @Override
+    public boolean check(Document dc) {
         return !dc.getLink().isEmpty() &&
                 !dc.getDocument_id().isEmpty() &&
                 !dc.getSubject_id().isEmpty() &&
                 !dc.getName().isEmpty();
     }
 
-    public static void addDocument() {
+    @Override
+    public void addDocument() {
         System.out.println("Them tai lieu");
         try (FileWriter file = new FileWriter("data/documents.csv", true)) {
             Document newDocument;
@@ -93,7 +104,8 @@ public class Document implements DocumentInterface {
         }
     }
 
-    public static void printDocument(Document dc) {
+    @Override
+    public void printDocument(Document dc) {
         System.out.println("--------------------------");
         System.out.println("Ma tai lieu : " + dc.getDocument_id());
         System.out.println("Ten tai lieu : " + dc.getName());
@@ -102,7 +114,8 @@ public class Document implements DocumentInterface {
         System.out.println("--------------------------");
     }
 
-    public static void printAllDocument() {
+    @Override
+    public void printAllDocument() {
         try (BufferedReader file = new BufferedReader(new FileReader("data/documents.csv"))) {
             String row;
             while ((row = file.readLine()) != null) {
@@ -116,7 +129,8 @@ public class Document implements DocumentInterface {
         }
     }
 
-    public static void writeDocument(Document dc, FileWriter file) {
+    @Override
+    public void writeDocument(Document dc, FileWriter file) {
         try {
             file.write(dc.getDocument_id() + "," + dc.getName() + "," + dc.getLink() + "," + dc.getSubject_id() + "\n");
         } catch (IOException e) {
@@ -124,7 +138,8 @@ public class Document implements DocumentInterface {
         }
     }
 
-    public static Document findDocument(String id) {
+    @Override
+    public Document findDocument(String id) {
         try (BufferedReader file = new BufferedReader(new FileReader("data/documents.csv"))) {
             String row;
             while ((row = file.readLine()) != null) {
@@ -141,7 +156,8 @@ public class Document implements DocumentInterface {
         return null;
     }
 
-    public static void deleteDocument(String id) {
+    @Override
+    public void deleteDocument(String id) {
         try (BufferedReader file = new BufferedReader(new FileReader("data/documents.csv"))) {
             List<String> temp = new ArrayList<>();
             String row;
@@ -163,7 +179,8 @@ public class Document implements DocumentInterface {
         }
     }
 
-    public static void editDocument(String id) {
+    @Override
+    public void editDocument(String id) {
         Document existingDocument = findDocument(id);
         if (existingDocument != null) {
             System.out.println("Thong tin tai lieu hien tai:");
@@ -210,7 +227,8 @@ public class Document implements DocumentInterface {
         }
     }
 
-    public static void showDocumentMenu() {
+    @Override
+    public void showDocumentMenu() {
         System.out.println("*******************************************");
         System.out.println("* Ban hay chon 1 lua chon:                *");
         System.out.println("* 1. Them tai lieu                        *");
@@ -222,7 +240,8 @@ public class Document implements DocumentInterface {
         System.out.println("*******************************************");
     }
 
-    public static void documentMain() {
+    @Override
+    public void documentMain() {
         while (true) {
             Utils.clearScreen();
             showDocumentMenu();

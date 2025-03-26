@@ -66,6 +66,7 @@ public class Subject implements SubjectInterface {
         this.class_id = class_id;
     }
 
+    @Override
     public Subject typeSubject() {
         Subject su = new Subject();
         System.out.print("Nhap ma mon hoc: ");
@@ -81,6 +82,7 @@ public class Subject implements SubjectInterface {
         return su;
     }
 
+    @Override
     public boolean check(Subject su) {
         return !su.getLink().isEmpty()
                 && !su.getClass_id().isEmpty()
@@ -89,6 +91,7 @@ public class Subject implements SubjectInterface {
                 && !su.getDescription().isEmpty();
     }
 
+    @Override
     public void addSubject() {
         System.out.println("Them mon hoc");
         try (FileWriter file = new FileWriter("data/subjects.csv", true)) {
@@ -107,6 +110,7 @@ public class Subject implements SubjectInterface {
         }
     }
 
+    @Override
     public void printSubject(Subject su) {
         System.out.println("--------------------------");
         System.out.println("Ma mon hoc : " + su.getSubject_id());
@@ -117,6 +121,7 @@ public class Subject implements SubjectInterface {
         System.out.println("--------------------------");
     }
 
+    @Override
     public void printAllSubject() {
         try (BufferedReader file = new BufferedReader(new FileReader("data/subjects.csv"))) {
             String row;
@@ -129,11 +134,13 @@ public class Subject implements SubjectInterface {
         }
     }
 
+    @Override
     public void writeSubject(Subject su, FileWriter file) throws IOException {
         file.write(su.getSubject_id() + "," + su.getName() + "," + su.getDescription() + "," +
                 su.getLink() + "," + su.getClass_id() + "\n");
     }
 
+    @Override
     public Subject findSubject(String id) {
         try (BufferedReader file = new BufferedReader(new FileReader("data/subjects.csv"))) {
             String row;
@@ -149,6 +156,7 @@ public class Subject implements SubjectInterface {
         return null;
     }
 
+    @Override
     public void deleteSubject(String id) {
         try {
             BufferedReader file = new BufferedReader(new FileReader("data/subjects.csv"));
@@ -173,6 +181,7 @@ public class Subject implements SubjectInterface {
         }
     }
 
+    @Override
     public void editSubject(String id) {
         Subject existingSubject = findSubject(id);
         if (existingSubject != null) {
@@ -224,6 +233,7 @@ public class Subject implements SubjectInterface {
         }
     }
 
+    @Override
     public void showSubjectMenu() {
         System.out.println("*******************************************");
         System.out.println("* Ban hay chon 1 lua chon:                *");
@@ -236,6 +246,7 @@ public class Subject implements SubjectInterface {
         System.out.println("*******************************************");
     }
 
+    @Override
     public void subjectMain() {
         while (true) {
             Utils.clearScreen();
@@ -295,3 +306,4 @@ public class Subject implements SubjectInterface {
         }
     }
 }
+

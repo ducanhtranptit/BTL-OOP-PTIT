@@ -6,6 +6,22 @@ import java.io.IOException;
 import java.util.List;
 
 public interface TeacherInterface {
+    String getName();
+
+    void setName(String name);
+
+    String getEmail();
+
+    void setEmail(String email);
+
+    String getTeacher_id();
+
+    void setTeacher_id(String teacher_id);
+
+    String getClass_id();
+
+    void setClass_id(String class_id);
+
     Teacher readTeacher();
 
     List<Teacher> readManyTeachers();

@@ -6,7 +6,27 @@ import java.io.IOException;
 import java.util.List;
 
 public interface StudentInterface {
+    String getName();
+
+    void setName(String name);
+
     Student readStudent();
+
+    String getEmail();
+
+    void setEmail(String email);
+
+    String getStu_id();
+
+    void setStu_id(String stu_id);
+
+    String getMark();
+
+    void setMark(String mark);
+
+    String getClass_id();
+
+    void setClass_id(String class_id);
 
     List<Student> readManyStudents();
 

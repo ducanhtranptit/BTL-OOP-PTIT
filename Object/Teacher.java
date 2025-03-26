@@ -26,34 +26,42 @@ public class Teacher implements TeacherInterface {
         this.class_id = class_id;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
 
+    @Override
     public void setEmail(String email) {
         this.email = email;
     }
 
+    @Override
     public String getTeacher_id() {
         return teacher_id;
     }
 
+    @Override
     public void setTeacher_id(String teacher_id) {
         this.teacher_id = teacher_id;
     }
 
+    @Override
     public String getClass_id() {
         return class_id;
     }
 
+    @Override
     public void setClass_id(String class_id) {
         this.class_id = class_id;
     }

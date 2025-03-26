@@ -32,47 +32,57 @@ public class Student implements StudentInterface {
         this.class_id = class_id;
     }
 
+    private static final Scanner scanner = new Scanner(System.in);
+
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
 
+    @Override
     public void setEmail(String email) {
         this.email = email;
     }
 
+    @Override
     public String getStu_id() {
         return stu_id;
     }
 
+    @Override
     public void setStu_id(String stu_id) {
         this.stu_id = stu_id;
     }
 
+    @Override
     public String getMark() {
         return mark;
     }
 
+    @Override
     public void setMark(String mark) {
         this.mark = mark;
     }
 
+    @Override
     public String getClass_id() {
         return class_id;
     }
 
+    @Override
     public void setClass_id(String class_id) {
         this.class_id = class_id;
     }
-
-    private static final Scanner scanner = new Scanner(System.in);
 
     @Override
     public Student readStudent() {
