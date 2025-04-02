@@ -43,9 +43,7 @@ public class Start {
         System.out.println("* 2. Quan ly thong tin giao vien          *");
         System.out.println("* 3. Quan ly thong tin mon hoc            *");
         System.out.println("* 4. Quan ly thong tin tai lieu mon hoc   *");
-        System.out.println("* 5. Hien thi thong tin khoa hoc          *");
-        System.out.println("* 6. Hien thi thong tin tung mon hoc      *");
-        System.out.println("* 7. Thoat ra man hinh chinh              *");
+        System.out.println("* 5. Thoat ra man hinh chinh              *");
         System.out.println("*******************************************");
     }
 
@@ -154,7 +152,7 @@ public class Start {
                                         while (true) {
                                             Utils.clearScreen();
                                             showChoiceMenu();
-                                            System.out.print("Ban chon (1-7): ");
+                                            System.out.print("Ban chon (1-5): ");
                                             String choiceMenuChoice = scanner.nextLine();
                                             switch (choiceMenuChoice) {
                                                 case "1":
@@ -174,13 +172,6 @@ public class Start {
                                                     document.documentMain();
                                                     break;
                                                 case "5":
-                                                    Course course = new Course();
-                                                    course.classManagerMain();
-                                                    break;
-                                                case "6":
-                                                    SubDoc.subDocMain();
-                                                    break;
-                                                case "7":
                                                     break;
                                                 default:
                                                     System.out.println("Ban da nhap sai! Nhan enter de nhap lai!");
